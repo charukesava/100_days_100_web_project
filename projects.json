@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "day": 1,
       "id": 1,
       "name": "Simple Counter",
       "description": "A basic counter application",
@@ -9,6 +10,7 @@
       "js": "const display = document.querySelector('.counter-display');\nlet count = 0;\n\ndocument.getElementById('incrementBtn').addEventListener('click', () => {\n  count++;\n  display.textContent = count;\n});\n\ndocument.getElementById('decrementBtn').addEventListener('click', () => {\n  count--;\n  display.textContent = count;\n});\n\ndocument.getElementById('resetBtn').addEventListener('click', () => {\n  count = 0;\n  display.textContent = count;\n});"
     },
     {
+      "day":2,
       "id": 2,
       "name": "Todo List",
       "description": "A simple todo list application",
@@ -17,6 +19,7 @@
       "js": "const todoInput = document.getElementById('todoInput');\nconst addBtn = document.getElementById('addBtn');\nconst todoList = document.getElementById('todoList');\n\nfunction addTodo() {\n  const text = todoInput.value.trim();\n  if (text === '') return;\n\n  const li = document.createElement('li');\n  li.className = 'todo-item';\n  li.innerHTML = `\n    <input type=\"checkbox\">\n    <span class=\"todo-text\">${text}</span>\n    <button class=\"delete-btn\">Delete</button>\n  `;\n\n  const checkbox = li.querySelector('input');\n  checkbox.addEventListener('change', () => {\n    li.classList.toggle('completed');\n  });\n\n  const deleteBtn = li.querySelector('.delete-btn');\n  deleteBtn.addEventListener('click', () => {\n    li.remove();\n  });\n\n  todoList.appendChild(li);\n  todoInput.value = '';\n  todoInput.focus();\n}\n\naddBtn.addEventListener('click', addTodo);\ntodoInput.addEventListener('keypress', (e) => {\n  if (e.key === 'Enter') addTodo();\n});"
     },
     {
+      "day": 3,
       "id": 3,
       "name": "Color Palette Generator",
       "description": "Generate random color palettes",
